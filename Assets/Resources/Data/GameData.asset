@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f601a76f9a43984bb42d2f948cc4ab1, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  _startValueMoney: 200
+  _itemCost: 100
+  _spinCount: 99
+  _getMoney: 100
+  _amountClothing: 4
+  hats:
+  - {fileID: 3022525819340187077, guid: 273a54b43ffc9ad4ca8f9171f8d54462, type: 3}
+  - {fileID: 3022525819340187077, guid: d46cf2c7238c09e4892841213aea691a, type: 3}
+  - {fileID: 3022525819340187077, guid: d036b332910b26d4bac48d785a115478, type: 3}
+  - {fileID: 3022525819340187077, guid: abe822b074d66c74599e9dfc24d777af, type: 3}
+  skins:
+  - {fileID: 3022525819340187077, guid: 40081b97cf131e14980a61c079c8023c, type: 3}
+  - {fileID: 3022525819340187077, guid: 96e6164373e1368428066b2e54930bf1, type: 3}
+  - {fileID: 3022525819340187077, guid: cf7d4fb63862ffc43a99abc3d5cac7bd, type: 3}
+  - {fileID: 3022525819340187077, guid: 797b41e856633ff4f987e5eaefed2765, type: 3}
+  robes:
+  - {fileID: 3022525819340187077, guid: c58080f72ee089749847602eade511bb, type: 3}
+  - {fileID: 3022525819340187077, guid: 8006484d01ca0b1419c348ba99933a97, type: 3}
+  - {fileID: 3022525819340187077, guid: 0e4bd64517f636a42909436411704698, type: 3}
+  - {fileID: 3022525819340187077, guid: 0369b361a6d090a439697b5932f66ae8, type: 3}
+  money: {fileID: 21300000, guid: bf147ecbad5b2434485a6b0e3ad171f1, type: 3}
+  activeButton: {fileID: 21300000, guid: 69ac6cae83046af47a38f60ff3e1c371, type: 3}
+  inactiveButton: {fileID: 21300000, guid: 6e926c026c9210b45a27e43ad76cdae7, type: 3}
