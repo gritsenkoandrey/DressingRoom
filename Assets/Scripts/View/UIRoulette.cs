@@ -20,7 +20,7 @@ public sealed class UIRoulette : UIBaseInterface
 
     private void Awake()
     {
-        _data = Data.Instance.Character;
+        _data = Data.Instance.Game;
         _images = _rewards.GetComponentsInChildren<UIImageReward>();
     }
 
@@ -33,7 +33,7 @@ public sealed class UIRoulette : UIBaseInterface
 
     private void OnDisable()
     {
-        _getReward.GetComponent<Button>().onClick.AddListener(GetReward);
+        _getReward.GetComponent<Button>().onClick.RemoveListener(GetReward);
     }
 
     private void Start()

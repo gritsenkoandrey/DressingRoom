@@ -9,7 +9,7 @@ public abstract class BaseUI : MonoBehaviour
 
     private void Awake()
     {
-        data = Data.Instance.Character;
+        data = Data.Instance.Game;
         uInterface = new UInterface();
     }
 

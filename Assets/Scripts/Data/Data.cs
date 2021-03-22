@@ -14,7 +14,7 @@ public sealed class Data : ScriptableObject
 
     public static Data Instance => _instance.Value;
 
-    public GameData Character
+    public GameData Game
     {
         get
         {

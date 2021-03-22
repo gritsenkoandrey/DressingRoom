@@ -11,7 +11,7 @@ public sealed class UIScrollRect : UIBaseInterface
 
     private void Awake()
     {
-        _data = Data.Instance.Character;
+        _data = Data.Instance.Game;
         _buttons = GetComponentsInChildren<UIButtonScrollRect>();
 
         for (int i = 0; i < _buttons.Length; i++)

@@ -66,17 +66,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 11258}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11536}
+      Script: {instanceID: 11260}
     - Class: 114
-      Script: {instanceID: 11746}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11776}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 11934}
+      Script: {instanceID: 11778}
     - Class: 114
-      Script: {instanceID: 12274}
+      Script: {instanceID: 11936}
     - Class: 114
       Script: {instanceID: 12482}
     - Class: 114
@@ -90,25 +90,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12988}
     - Class: 114
-      Script: {instanceID: 13118}
+      Script: {instanceID: 13068}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 13120}
     - Class: 114
-      Script: {instanceID: 13742}
+      Script: {instanceID: 13520}
     - Class: 114
-      Script: {instanceID: 13758}
+      Script: {instanceID: 13744}
     - Class: 114
-      Script: {instanceID: 13764}
+      Script: {instanceID: 13760}
     - Class: 114
-      Script: {instanceID: 14246}
+      Script: {instanceID: 13766}
     - Class: 114
-      Script: {instanceID: 14276}
+      Script: {instanceID: 14188}
     - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 14252}
     - Class: 114
-      Script: {instanceID: 28220}
+      Script: {instanceID: 14282}
     - Class: 114
-      Script: {instanceID: 100302}
+      Script: {instanceID: 14384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -132,6 +132,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: cc4274b586df3c02688bac01b88bd16c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: EventSystem
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -332,12 +338,6 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: cc4274b586df3c02688bac01b88bd16c
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.EventSystems
-    className: EventSystem
-  - hash:
-      serializedVersion: 2
       Hash: b424b4eeb810aecb0ff91c62639241e9
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -444,6 +444,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 2c3c2aeea94282a3817286ebfbd2fe12
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIButtonGetReward
   - hash:
       serializedVersion: 2
       Hash: 4c48b3d389ca60c15cead6c8804f0160
@@ -572,6 +578,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 7138766efb48d9880ae19b9e1e67ba11
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIImageReward
+  - hash:
+      serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -672,18 +684,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 7138766efb48d9880ae19b9e1e67ba11
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIImageReward
-  - hash:
-      serializedVersion: 2
-      Hash: 2c3c2aeea94282a3817286ebfbd2fe12
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIButtonGetReward
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
