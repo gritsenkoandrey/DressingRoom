@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\View\UIButtonScrollRect.cs" />
     <Compile Include="Assets\Scripts\View\UICharacter.cs" />
     <Compile Include="Assets\Scripts\View\UIImageReward.cs" />
+    <Compile Include="Assets\Scripts\View\UIRewards.cs" />
     <Compile Include="Assets\Scripts\View\UIRoulette.cs" />
     <Compile Include="Assets\Scripts\View\UIScrollRect.cs" />
     <Compile Include="Assets\Scripts\View\UIShowMoney.cs" />

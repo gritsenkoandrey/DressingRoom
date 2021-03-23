@@ -4,12 +4,8 @@ using UnityEngine.UI;
 
 public sealed class UIRoulette : UIBaseInterface
 {
-    [SerializeField] private GameObject _rewards = null;
-    [SerializeField] private UIButtonGetReward _getReward =null;
+    private UIButtonGetReward _button;
     private GameData _data;
-    private Sprite _tmpSprite;
-    private UIImageReward[] _images;
-
     private int _numberOfTurns;
     private readonly int _minNumberOfTurn = 20;
     private readonly int _maxNumberOfTurn = 60;
@@ -21,24 +17,23 @@ public sealed class UIRoulette : UIBaseInterface
     private void Awake()
     {
         _data = Data.Instance.Game;
-        _images = _rewards.GetComponentsInChildren<UIImageReward>();
+        _button = FindObjectOfType<UIButtonGetReward>();
     }
 
     private void OnEnable()
     {
-        _getReward.GetComponent<Button>().onClick.AddListener(GetReward);
-
         Services.Instance.EventService.UpdateAmountMoney(_data.GetValueMoney());
+
+        _button.GetComponent<Button>().onClick.AddListener(GetReward);
     }
 
     private void OnDisable()
     {
-        _getReward.GetComponent<Button>().onClick.RemoveListener(GetReward);
+        _button.GetComponent<Button>().onClick.RemoveListener(GetReward);
     }
 
     private void Start()
     {
-        _getReward.Hide();
         ICanTurn = true;
     }
 
@@ -78,36 +73,37 @@ public sealed class UIRoulette : UIBaseInterface
 
         _yourReward = Mathf.RoundToInt(transform.eulerAngles.z);
         ShowReward(_yourReward);
-        _getReward.Show();
+        _button.gameObject.SetActive(true);
     }
 
     private void GetReward()
     {
-        _getReward.Hide();
+        _button.SetActiveObject(false);
+        _button.SetActiveText(false);
         ICanTurn = true;
     }
 
     private void ShowReward(int reward)
     {
         var index = Random.Range(0, _data.GetAmountClothing());
-        UpdateItems();
+        Services.Instance.EventService.UpdateItems();
 
         switch (reward)
         {
             case 0:
             case 18:
-                RewardSkin(index);
+                Services.Instance.EventService.RewardItem(InventoryType.Skin, index);
                 break;
             case 36:
             case 54:
             case 72:
             case 90:
-                RewardRobe(index);
+                Services.Instance.EventService.RewardItem(InventoryType.Robe, index);
                 break;
             case 108:
             case 126:
             case 144:
-                RewardHat(index);
+                Services.Instance.EventService.RewardItem(InventoryType.Hat, index);
                 break;
             case 162:
             case 180:
@@ -119,58 +115,11 @@ public sealed class UIRoulette : UIBaseInterface
             case 288:
             case 306:
             case 324:
-                RewardMoney();
+                Services.Instance.EventService.RewardMoney();
                 break;
             case 342:
-                RewardSkin(index);
+                Services.Instance.EventService.RewardItem(InventoryType.Skin, index);
                 break;
         }
-    }
-
-    private void UpdateItems()
-    {
-        for (int i = _images.Length - 2; i >= 0; i--)
-        {
-            _tmpSprite = _images[i].GetImage.sprite;
-            _images[i + 1].GetImage.sprite = _tmpSprite;
-        }
-    }
-
-    private void RewardSkin(int index)
-    {
-        _getReward.Image.sprite = _data.skins[index].sprite;
-        if (!_data.SkinIsUnlocked((SkinType)index)) _data.SkinUnlocked((SkinType)index, true);
-        else GetMoney();
-        _images[0].GetImage.sprite = _data.skins[index].sprite;
-    }
-
-    private void RewardRobe(int index)
-    {
-        _getReward.Image.sprite = _data.robes[index].sprite;
-        if (!_data.RobeIsUnlocked((RobeType)index)) _data.RobeUnlocked((RobeType)index, true);
-        else GetMoney();
-        _images[0].GetImage.sprite = _data.robes[index].sprite;
-    }
-
-    private void RewardHat(int index)
-    {
-        _getReward.Image.sprite = _data.hats[index].sprite;
-        if (!_data.HatIsUnlocked((HatType)index)) _data.HatUnlocked((HatType)index, true);
-        else GetMoney();
-        _images[0].GetImage.sprite = _data.hats[index].sprite;
-    }
-
-    private void RewardMoney()
-    {
-        _getReward.Image.sprite = _data.money;
-        _getReward.Text.gameObject.SetActive(true);
-        GetMoney();
-        _images[0].GetImage.sprite = _data.money;
-    }
-
-    private void GetMoney()
-    {
-        _data.AddMoney(_data.GetMoney());
-        Services.Instance.EventService.UpdateAmountMoney(_data.GetValueMoney());
     }
 }

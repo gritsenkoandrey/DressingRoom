@@ -5,18 +5,47 @@ public sealed class UIButtonGetReward : UIBaseInterface
 {
     [SerializeField] private Image _image = null;
     [SerializeField] private Text _text = null;
+    private GameData _data;
 
-    public Image Image => _image;
-    public Text Text => _text;
-
-    public void Hide()
+    private void Awake()
     {
-        _text.gameObject.SetActive(false);
-        gameObject.SetActive(false);
+        _data = Data.Instance.Game;
     }
 
-    public void Show()
+    private void Start()
     {
-        gameObject.SetActive(true);
+        SetActiveObject(false);
+    }
+
+    public void SetActiveObject(bool value)
+    {
+        gameObject.SetActive(value);
+    }
+
+    public void SetActiveText(bool value)
+    {
+        _text.gameObject.SetActive(value);
+    }
+
+    public void ShowInventory(InventoryType type, int index)
+    {
+        switch (type)
+        {
+            case InventoryType.Skin:
+                _image.sprite = _data.skins[index].sprite;
+                break;
+            case InventoryType.Hat:
+                _image.sprite = _data.hats[index].sprite;
+                break;
+            case InventoryType.Robe:
+                _image.sprite = _data.robes[index].sprite;
+                break;
+        }
+    }
+
+    public void ShowMoney()
+    {
+        _image.sprite = _data.money;
+        SetActiveText(true);
     }
 }
